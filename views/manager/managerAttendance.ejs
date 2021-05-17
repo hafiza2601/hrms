@@ -1,0 +1,75 @@
+<%- include('../managerPartial/managerDashboard') %>
+<div id="wrapper">
+    <div class="col-md-12">
+        <div class="card social">
+            <div class="profile-header d-flex justify-content-between justify-content-center">
+                <h1>Attendance History</h1>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card">
+
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table class="table table-hover js-basic-example dataTable table-custom spacing5">
+                                <thead>
+                                    <tr>
+                                        <th>Employe Code</th>
+                                        <th>Name</th>
+                                        <th>Date</th>
+                                        <th>Check In</th>
+                                        <th>Check Out</th>
+                                        <th>Status</th>
+
+
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <% for(let attendance of allAttendance){ %>
+                                    <tr>
+                                        <td><%= attendance.employe.username %> </td>
+                                        <td><%= attendance.employe.firstName %> </td>
+                                        <td><%= attendance.date %> </td>
+                                        <td><%= attendance.checkIn %> </td>
+                                        <td><%= attendance.checkOut %> </td>
+                                        <td><%= attendance.status %> </td>
+
+
+                                    </tr>
+                                    <% } %>
+
+                                </tbody>
+
+                                <tfoot>
+                                    <tr>
+                                        <th>Employe Code</th>
+                                        <th>Name</th>
+                                        <th>Date</th>
+                                        <th>Check In</th>
+                                        <th>Check Out</th>
+                                        <th>Status</th>
+
+                                    </tr>
+                                </tfoot>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</div>
+<%- include('../managerPartial/managerDashend') %>

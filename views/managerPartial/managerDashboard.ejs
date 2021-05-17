@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Bigstep | Dashboard</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="Qubes Bootstrap 4x admin is super flexible, powerful, clean &amp; modern responsive admin dashboard with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Qubes admin template, dashboard template, flat admin template, responsive admin template, web app, Light Dark version">
+    <meta name="author" content="GetBootstrap, design by: puffintheme.com">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/vendor/animate-css/vivify.min.css">
+
+    <link rel="stylesheet" href="../assets/vendor/c3/c3.min.css" />
+    <link rel="stylesheet" href="../assets/vendor/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="../assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="assets/css/site.min.css">
+
+    <style>
+        td.details-control {
+            background: url('../assets/images/details_open.png') no-repeat center center;
+            cursor: pointer;
+        }
+
+        tr.shown td.details-control {
+            background: url('../assets/images/details_close.png') no-repeat center center;
+        }
+    </style>
+
+
+</head>
+
+<body class="theme-blue">
+
+
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30"><i class="fa fa-cube font-25"></i></div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+
+    <div id="wrapper">
+
+        <nav class="navbar navbar-fixed-top">
+            <div class="container-fluid">
+
+                <div class="navbar-left">
+                    <div class="navbar-brand">
+                        <a class="small_menu_btn" href="javascript:void(0);"><i class="fa fa-align-left"></i></a>
+                        <a href="dashboard.ejs"><span>Bigstep</span></a>
+                    </div>
+
+                </div>
+
+                <div class="navbar-right">
+                    <a href="/logout" class="nav-link"> <span style="color: white;">Logout</span> </a>
+                </div>
+
+
+            </div>
+        </nav>
+
+        <div id="left-sidebar" class="sidebar">
+
+            <div class="sidebar_list">
+                <div class="tab-content" id="main-menu">
+                    <div class="tab-pane active" id="Home-icon">
+                        <nav class="sidebar-nav sidebar-scroll">
+                            <ul class="metismenu">
+                                <li class="active"><a href="/managerHome"><i
+                                            class="icon-speedometer"></i><span>Dashboard</span></a></li>
+
+                                <li class="header">Self service</li>
+                                <li><a href="/managerProfile"><i class="icon-user"></i><span>Profile</span></a></li>
+                                <li><a href="/managerAttendance"><i
+                                            class=" icon-hourglass"></i><span>Attendance</span></a>
+                                </li>
+                                <li><a href="/managerAttendanceApproval"><i class=" icon-notebook"></i><span>Attendance
+                                            Approval</span></a></li>
+
+
+
+
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="main-content">
+            <div class="block-header">
+                <div class="row clearfix">
+                    <div class="col-md-6 col-sm-12">
+                        <h1>Dashboard</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#"><i class="fa fa-cube"></i></a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-md-6 col-md-offset-6">
+                        <div class="pull-right">
+                            <%- include('./managerFlash') %>
+                        </div>
+
+                    </div>
+                </div>
+            </div>

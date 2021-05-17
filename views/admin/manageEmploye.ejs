@@ -1,0 +1,93 @@
+<%- include('../adminPartial/adminDashboard') %>
+
+
+<div id="wrapper">
+    <div class="col-md-12">
+        <div class="card social">
+            <div class="profile-header d-flex justify-content-between justify-content-center">
+                <div class="col-md-4 col-sm-12 text-left hidden-xs">Add New Employe</div>
+                <div class="col-md-4 col-sm-12 text-right hidden-xs">
+                    <a href="/addEmploye" class="btn btn-sm btn-primary" title="">Add</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card">
+
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table class="table table-hover js-basic-example dataTable table-custom spacing5">
+                                <thead>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Designation</th>
+                                        <th>Date of joining</th>
+                                        <th>Reporting Manager</th>
+                                        <th>Action</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(let user of users){ %>
+                                    <tr>
+                                        <td><%= user.username %> </td>
+                                        <td><%= user.firstName %> </td>
+                                        <td><%= user.email %> </td>
+                                        <td><%= user.designation %> </td>
+                                        <td><%= user.dateOfJoining %> </td>
+                                        <td><%= user.ReportingManager %> </td>
+                                        <td>
+
+                                            <div style="width:280px;">
+                                                <div style="float: left; width: 50x">
+                                                    <form action="/editEmploye?id=<%= user.id %>" method="POST">
+                                                        <button class="btn btn-primary" type="submit">Edit</button>
+                                                    </form>
+                                                </div>
+                                                <div style="float: right; width: 225px">
+                                                    <form action="/deleteEmploye?id=<%= user.id %>&_method=DELETE"
+                                                        method="POST">
+                                                        <button class="btn btn-primary" type="submit">Delete</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+
+                                    </tr>
+                                    <% } %>
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Designation</th>
+                                        <th>Date of joining</th>
+                                        <th>Reporting Manager</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </tfoot>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</div>
+<%- include('../adminPartial/adminDashend') %>

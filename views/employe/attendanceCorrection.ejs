@@ -1,0 +1,90 @@
+<%- include('../partials/dashboard') %>
+<div class="container-fluid">
+    <div class="row clearfix">
+        <div class="col-md-12">
+            <div class="card social">
+                <h1>Attendance Correction</h1>
+            </div>
+        </div>
+
+
+        <form action="/attendanceCorrection" method="POST">
+            <%= console.log("heyyyyy") %>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>REGULARIZATION APPLICATION FORM</h2>
+                        <ul class="header-dropdown dropdown">
+                            <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>
+
+                        </ul>
+                    </div>
+                    <div class="body">
+
+                        <div class="row clearfix">
+
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <label class="font-weight-bold" for="Date">Attendance Date</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar"></i></span>
+                                        </div>
+
+                                        <input type="date" data-date-autoclose="true" class="form-control"
+                                            name="attendanceDate" id="Date" placeholder="Date">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <label class="font-weight-bold" for="reason">Reason</label>
+                                    <select class="form-control" id="reason" name="reason">
+                                        <option value="">-- Select Reason --</option>
+                                        <option value="forgot checkin">forgot chekin</option>
+                                        <option value="forgot checkout">forgot checkout</option>
+                                        <option value="forgot both">forgot both</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <label class="font-weight-bold" for="Date">Punch in Time</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-clock"></i></span>
+                                        </div>
+                                        <input type="time" data-date-autoclose="true" class="form-control"
+                                            name="punchIn" id="Date" placeholder="Punch in time">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <label class="font-weight-bold" for="Date">Punch out Time</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-clock"></i></span>
+                                        </div>
+                                        <input type="time" data-date-autoclose="true" class="form-control"
+                                            name="punchout" id="Date" placeholder="Punch out time">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <button type="submit" class="btn btn-round btn-primary">Submit</button> &nbsp;&nbsp;
+                        <button type="button" class="btn btn-round btn-default">Cancel</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+</div>
+<%- include('../partials/dashEnd') %>

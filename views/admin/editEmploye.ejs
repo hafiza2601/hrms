@@ -1,0 +1,183 @@
+<%- include('../adminPartial/adminDashboard') %>
+<div class="container-fluid">
+    <div class="row clearfix">
+
+
+
+        <form action="/editEmploye?id=<%= user.id %>&_method=PUT" method="POST">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>Basic Information</h2>
+                        <ul class="header-dropdown dropdown">
+                            <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>
+
+                        </ul>
+                    </div>
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <label class="font-weight-bold" for="code">Employe Code</label>
+                                    <input type="number" class="form-control" placeholder="Employe Code" id="code"
+                                        name="username" value=<%= user.username %>>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <label for="first-name" class="font-weight-bold">First Name</label>
+                                    <input type="text" class="form-control" placeholder="First Name" id="first-name"
+                                        name="firstName" value="<%= user.firstName %>">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <label for="last-name" class="font-weight-bold">Last Name</label>
+                                    <input type="text" class="form-control" placeholder="Last Name" id="last-name"
+                                        name="lastName" value="<%= user.lastName %> ">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <label class="font-weight-bold" for="gender">Gender</label>
+                                    <select class="form-control" id="gender" name="gender">
+                                        <option value="">-- Select Gender --</option>
+                                        <option value="AF">Male</option>
+                                        <option value="AX">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <label class="font-weight-bold" for="birthdate">Birthdate</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar"></i></span>
+                                        </div>
+
+                                        <input data-provide="datepicker" data-date-autoclose="true" class="form-control"
+                                            name="dateOfBirth" id="birthdate" placeholder="Birthdate"
+                                            value="<%= user.dateOfBirth %>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <label class="font-weight-bold" for="joining">Joining Date</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar"></i></span>
+                                        </div>
+
+                                        <input data-provide="datepicker" data-date-autoclose="true" class="form-control"
+                                            name="joiningDate" id="joining" placeholder="JoiningDate"
+                                            value="<%= user.joiningDate %> ">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <label for="email" class="font-weight-bold">Email</label>
+                                    <input type="text" class="form-control" placeholder="Email" id="email" name="email"
+                                        value="<%= user.email %> ">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <label for="Contact Number" class="font-weight-bold">Contact
+                                        Number</label>
+                                    <input type="number" class="form-control" placeholder="Contact Number"
+                                        name="contact" value=<%= user.contact %> id="Contact Number">
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="header">
+                        <h2>Position Details</h2>
+
+                    </div>
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label for="designation" class="font-weight-bold">Designation</label>
+                                    <input type="text" class="form-control" placeholder="Designation" id="designation"
+                                        value="<%= user.designation %> ">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label for="reporting-manager" class="font-weight-bold">Reporting
+                                        Manager</label>
+                                    <input type="text" class="form-control" placeholder="Reportning Manager"
+                                        value="<%= user.reportingManager %> " id="reporting-manager">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label class="font-weight-bold" for="role">Role</label>
+                                    <select class="form-control" id="role" name="role">
+                                        <option value="Admin">Admin</option>
+                                        <option value="Manager">Manager</option>
+                                        <option value="Employee">Employee</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-12 col-sm-10 pb-4 text-right hidden-xs">
+                    <button type="submit" class="btn btn-round btn-primary">Update</button> &nbsp;&nbsp;
+                    <form action="/manageEmploye">
+
+                        <button type="submit" class="btn btn-round btn-primary">Cancle</button>
+
+                    </form>
+                </div>
+
+
+            </div>
+        </form>
+
+        <div class="card">
+            <div class="header">
+                <h2>Account Data</h2>
+            </div>
+            <div class="body">
+
+                <div class="col-lg-12 col-md-12">
+
+                    <h6>Change Password</h6>
+                    <br>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Current Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="New Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Confirm New Password">
+                    </div>
+                    <button type="button" class="btn btn-round btn-primary">Update</button> &nbsp;&nbsp;
+                    <button type="button" class="btn btn-round btn-default">Cancel</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+<%- include('../adminPartial/adminDashend') %>

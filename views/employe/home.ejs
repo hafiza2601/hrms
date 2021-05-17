@@ -1,0 +1,97 @@
+<%- include('../partials/dashboard') %>
+
+<div class="container-fluid">
+    <div class="row clearfix pt-5">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="body p-40">
+                    <div class="row clearfix p-7">
+                        <div class="col-lg-4 col-md-12 p-10">
+
+                            <strong>NAME</strong>
+                            <br>
+                            <%= user.firstName %> <%= user.lastName %>
+
+                        </div>
+                        <div class="col-lg-4 col-md-12 p-10">
+                            <strong>EMPLOYE ID</strong>
+                            <br>
+                            <%= user.username %>
+                        </div>
+                        <div class="col-lg-4 col-md-12 p-10">
+                            <strong>JOINING DATE</strong>
+                            <br>
+                            21/05/2020
+                        </div>
+                        <div class="col-lg-4 col-md-12 p-10">
+                            <strong>DATE OF BIRTH</strong>
+                            <br>
+                            26/01/2000
+                        </div>
+                        <div class="col-lg-4 col-md-12 p-10">
+                            <strong>EMAIL</strong>
+                            <br>
+                            <%= user.email %>
+                        </div>
+                        <div class="col-lg-4 col-md-12 p-10">
+                            <strong>REPORTING MANAGER ID</strong>
+                            <br>
+                            <%= user.reportingManager.username %>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid">
+    <div class="row clearfix">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="body p-40">
+                    <div class="row justify-content-center">
+                        <h2>Mark Attendance</h2>
+                    </div>
+                    <div class="row justify-content-center p-5">
+                        <form action="/checkIn" method="POST">
+                            <div class="col-md-12 col-sm-12 text-teft hidden-xs">
+                                <button type="submit" class="btn btn-sm btn-primary">CheckIn</button>
+                            </div>
+                        </form>
+                        <br>
+                        <form action="/checkOut" method="POST">
+                            <div class="col-md-12 col-sm-12 text-right hidden-xs">
+                                <button type="submit" class="btn btn-sm btn-primary">CheckOut</button>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row clearfix">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="body p-40">
+                    <div class="row justify-content-center">
+                        <strong>Reporting Manager Name: </strong>
+                        <%= user.reportingManager.firstName %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../partials/dashEnd') %>
